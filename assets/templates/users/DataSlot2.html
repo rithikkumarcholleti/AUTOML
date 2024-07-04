@@ -1,0 +1,40 @@
+{% extends 'users/userbase.html'%}
+{%block contents%}
+ <div class="w3-container w3-content w3-center w3-padding-64" id="band" style="max-width:800px">
+    <h2 class="w3-wide">Perform Predections Analysis</h2>
+    <p class="w3-opacity"><i>We love Machine Learning</i></p>
+    <p class="w3-justify">
+     <center>
+     <table border="2">
+      {% for key,value in data.items %}
+     <tr><th>{{ key}}</th>
+     {% for v in value %}
+        <td>{{v}}</td>
+        {% endfor %}
+     {% endfor %}
+     </tr>
+      </table>
+
+
+     </center>
+     </h2>
+ </form>
+    </p>
+
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>Data Imputation</p>
+          <p>Often datasets, in reality, may contain missing values for some different reasons The randomness of MCAR data is high enough that there is no overall bias towards any particular class, unlike MAR data, which are responsible for causing an increase in bias</p>
+      </div>
+      <div class="w3-third">
+        <p>Data Balancing</p>
+          <p>Data imbalance is a condition when one or more classes in a categorical dataset have higher observations than the rest of the classes The sample handling approach for data balancing will preprocess the training set to minimize class differences, and this issue can be resolved.</p>
+      </div>
+      <div class="w3-third">
+        <p>Data Encoding</p>
+          <p>To make the data human-readable, the training data is often labelled in words. Data Encoding refers to converting the provided feature labels into numerical form to allow computer machines to interpret them.</p>
+      </div>
+    </div>
+  </div>
+
+{%endblock%}

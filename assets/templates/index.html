@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{%block contents%}
+ <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Automated Machine Learning: The New Wave of Machine Learning</h2>
+    <p class="w3-opacity"><i>We love Machine Learning</i></p>
+    <p class="w3-justify">With the explosion in the use of machine learning in various domains, the need for an efficient pipeline for the development of machine learning models has never been more critical. However, the task of forming and training models largely remains traditional with a dependency on domain experts and time-consuming data manipulation operations, which impedes the development of machine learning models in both academia as well as industry. This demand advocates the new research era concerned with fitting machine learning models fully automatically i.e., AutoML. Automated Machine Learning(AutoML) is an end-to-end process that aims at automating this model development pipeline without any external assistance. First, we provide an insights of AutoML. Second, we delve into the individual segments in the AutoML pipeline and cover their approaches in brief.We also provide a case study on the industrial use and impact of AutoML with a focus on practical applicability in a business context. At last, we conclude with the open research issues, and future research directions.</p>
+
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>Data Imputation</p>
+          <p>Often datasets, in reality, may contain missing values for some different reasons The randomness of MCAR data is high enough that there is no overall bias towards any particular class, unlike MAR data, which are responsible for causing an increase in bias</p>
+      </div>
+      <div class="w3-third">
+        <p>Data Balancing</p>
+          <p>Data imbalance is a condition when one or more classes in a categorical dataset have higher observations than the rest of the classes The sample handling approach for data balancing will preprocess the training set to minimize class differences, and this issue can be resolved.</p>
+      </div>
+      <div class="w3-third">
+        <p>Data Encoding</p>
+          <p>To make the data human-readable, the training data is often labelled in words. Data Encoding refers to converting the provided feature labels into numerical form to allow computer machines to interpret them.</p>
+      </div>
+    </div>
+  </div>
+
+{%endblock%}

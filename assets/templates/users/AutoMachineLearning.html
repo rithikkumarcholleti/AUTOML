@@ -1,0 +1,99 @@
+{% extends 'users/userbase.html'%}
+{%block contents%}
+ <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Automated Machine Learning</h2>
+    <p class="w3-opacity"><i>We love Machine Learning</i>
+
+        <h2>Auto Ml Results</h2>
+        {{html | safe}}
+    </p>
+    <p class="w3-justify">
+
+          <table class="table table-bordered bg-light text-dark" id="example" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Age </th>
+        <th>Workclass</th>
+        <th>EducationNum</th>
+        <th>MaritalStatus</th>
+        <th>Occupation</th>
+        <th>Relationship</th>
+        <th>Race</th>
+        <th>Sex</th>
+        <th>CapitalGain</th>
+        <th>CapitalLoss</th>
+        <th>Hoursperweek</th>
+        <th>Country</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in dataset %}
+                                            <tr style="color: Black">
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.Age}}</td>
+                                                <td>{{i.Workclass}}</td>
+                                                <td>{{i.EducationNum}}</td>
+                                                <td>{{i.MaritalStatus}}</td>
+                                                <td>{{i.Occupation}}</td>
+                                                <td>{{i.Relationship}}</td>
+                                                <td>{{i.Race}}</td>
+                                                <td>{{i.Sex}}</td>
+                                                <td>{{i.CapitalGain}}</td>
+                                                <td>{{i.CapitalLoss}}</td>
+                                                <td>{{i.Hoursperweek}}</td>
+                                                <td>{{i.Country}}</td>
+
+                                            </tr>
+                                            {% endfor %}
+
+    </tbody>
+
+  </table>
+     <!--
+{% if users.has_other_pages %}
+  <ul class="pagination">
+    {% if users.has_previous %}
+      <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in users.paginator.page_range %}
+      {% if users.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if users.has_next %}
+      <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+-->
+
+
+
+
+    </p>
+
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>Data Imputation</p>
+          <p>Often datasets, in reality, may contain missing values for some different reasons The randomness of MCAR data is high enough that there is no overall bias towards any particular class, unlike MAR data, which are responsible for causing an increase in bias</p>
+      </div>
+      <div class="w3-third">
+        <p>Data Balancing</p>
+          <p>Data imbalance is a condition when one or more classes in a categorical dataset have higher observations than the rest of the classes The sample handling approach for data balancing will preprocess the training set to minimize class differences, and this issue can be resolved.</p>
+      </div>
+      <div class="w3-third">
+        <p>Data Encoding</p>
+          <p>To make the data human-readable, the training data is often labelled in words. Data Encoding refers to converting the provided feature labels into numerical form to allow computer machines to interpret them.</p>
+      </div>
+    </div>
+  </div>
+
+{%endblock%}

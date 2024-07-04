@@ -1,0 +1,5 @@
+start the h2o server
+you required jdk 1.8 above in the system
+like this
+import h2o
+h2o.init(nthreads=-1) ## Server will Start

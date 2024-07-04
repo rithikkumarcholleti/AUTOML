@@ -1,0 +1,52 @@
+{% extends 'admins/adminbase.html'%}
+{%block contents%}
+<div class="w3-container w3-content w3-center w3-padding-64" id="band" style="max-width:800px">
+    <h2 class="w3-wide">Admin View Registerd Users</h2>
+    <p class="w3-opacity"><i>Computers are able to see, hear and learn</i></p>
+    <p class="w3-justify ">
+    <center>
+        <table  border="2px" class="table table-hover table-dark">
+            <thead>
+            <tr class="table-danger">
+                <th scope="col">S.No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Login ID</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Email</th>
+                <th scope="col">Locality</th>
+                <th scope="col">Status</th>
+                <th scope="col">Activate</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in data %}
+            <tr scope="row" style="color: Black">
+                <td>{{forloop.counter}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.loginid}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.locality}}</td>
+                <td>{{i.status}}</td>
+
+                {% if i.status == 'waiting' %}
+                <td><a class="btn-link" href="/AdminActivaUsers/?uid={{ i.id }}"
+                       style="color:DARKBLUE">Activate</a></td>
+                {% else %}
+                <td> Activated</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+    </center>
+    </p>
+
+    <div class="w3-row w3-padding-32">
+
+    </div>
+</div>
+
+{%endblock%}

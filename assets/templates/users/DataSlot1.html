@@ -1,0 +1,60 @@
+{% extends 'users/userbase.html'%}
+{%block contents%}
+ <div class="w3-container w3-content w3-center w3-padding-64" id="band" style="max-width:800px">
+    <h2 class="w3-wide">Perform Predections Analysis</h2>
+    <p class="w3-opacity"><i>We love Machine Learning</i></p>
+    <p class="w3-justify">
+     <center>
+     <form action="{%url 'MyPredectionsSlot3'%}" method="post">
+         {%csrf_token%}
+         <label>Enter Test Size </label>&nbsp;&nbsp;&nbsp;
+         <input type="number" name="testsize" required min="10" max="90" style="size:90;"> <strong>Like Training and testing Split(30,40,.....90)</strong>
+         <br/><br/>
+         <button type="submit" name="Test">Test Predections</button>
+     </form>
+         <table class="table table-bordered bg-light text-dark">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Years of Experience</th>
+        <th>Salary</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+                                            <tr style="color: Black">
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.YearsExperience}}</td>
+                                                <td>{{i.Salary}}</td>
+
+
+
+                                            </tr>
+                                            {% endfor %}
+
+    </tbody>
+  </table>
+
+</center>
+     </h2>
+ </form>
+    </p>
+
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>Data Imputation</p>
+          <p>Often datasets, in reality, may contain missing values for some different reasons The randomness of MCAR data is high enough that there is no overall bias towards any particular class, unlike MAR data, which are responsible for causing an increase in bias</p>
+      </div>
+      <div class="w3-third">
+        <p>Data Balancing</p>
+          <p>Data imbalance is a condition when one or more classes in a categorical dataset have higher observations than the rest of the classes The sample handling approach for data balancing will preprocess the training set to minimize class differences, and this issue can be resolved.</p>
+      </div>
+      <div class="w3-third">
+        <p>Data Encoding</p>
+          <p>To make the data human-readable, the training data is often labelled in words. Data Encoding refers to converting the provided feature labels into numerical form to allow computer machines to interpret them.</p>
+      </div>
+    </div>
+  </div>
+
+{%endblock%}

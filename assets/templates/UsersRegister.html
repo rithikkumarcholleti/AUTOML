@@ -1,0 +1,96 @@
+{% extends 'base.html'%}
+{%block contents%}
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">User Register Form</h2>
+    <p class="w3-opacity"><i>Be touch with us</i></p>
+    <p class="w3-justify ">
+    <center>
+        <form action="{%url 'UserRegisterActions'%}" method="POST">
+            {% csrf_token %}
+
+            <table>
+                <tr>
+                    <td>Customer Name</td>
+                    <td>{{form.name}}</td>
+                </tr>
+                <tr>
+                    <td>Login ID</td>
+                    <td>{{form.loginid}}</td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>{{form.password}}</td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td>{{form.mobile}}</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>{{form.email}}</td>
+                </tr>
+                <tr>
+                    <td>Locality</td>
+                    <td>{{form.locality}}</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>{{form.address}}</td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>{{form.city}}</td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td>{{form.state}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>{{form.status}}</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button class="btn btn-primary my-2 my-sm-0" style="margin-left:20%;" type="submit">
+                            Register
+                        </button>
+                    </td>
+                </tr>
+
+                {% if messages %}
+                {% for message in messages %}
+                <font color='GREEN'> {{ message }}</font>
+                {% endfor %}
+                {% endif %}
+
+            </table>
+
+        </form>
+
+    </center>
+    </p>
+
+    <div class="w3-row w3-padding-32">
+        <div class="w3-third">
+            <p>Data Imputation</p>
+            <p>Often datasets, in reality, may contain missing values for some different reasons The randomness of MCAR
+                data is high enough that there is no overall bias towards any particular class, unlike MAR data, which
+                are responsible for causing an increase in bias</p>
+        </div>
+        <div class="w3-third">
+            <p>Data Balancing</p>
+            <p>Data imbalance is a condition when one or more classes in a categorical dataset have higher observations
+                than the rest of the classes The sample handling approach for data balancing will preprocess the
+                training set to minimize class differences, and this issue can be resolved.</p>
+        </div>
+        <div class="w3-third">
+            <p>Data Encoding</p>
+            <p>To make the data human-readable, the training data is often labelled in words. Data Encoding refers to
+                converting the provided feature labels into numerical form to allow computer machines to interpret
+                them.</p>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
